@@ -24,14 +24,15 @@ class Teste : MonoBehaviour
     {
         canSpawn = false;
         GameObject obj = Instantiate(Resource, ResourcesBox);
+        obj.transform.SetParent(ResourcesBox.parent);
         ProductResourceController productResourceController = obj.GetComponent<ProductResourceController>();
 
-        yield return productResourceController.WaitForComeToWorkbench(WorkbenchPlaces[i].position);
+        yield return productResourceController.WaitForComeToWorkbench(WorkbenchPlaces[i].localPosition);
 
         canSpawn = true;
         i++;
         if(i > 3) i = 0;
 
-        yield return productResourceController.WaitForComeToProductBox(ProductBox.position);
+        yield return productResourceController.WaitForComeToProductBox(ProductBox.localPosition);
     }
 }

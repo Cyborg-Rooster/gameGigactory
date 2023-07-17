@@ -14,7 +14,7 @@ class MoveTransform : MoveObject
         KeepCoordinade();
         Move(Transform);
 
-        if (ValidatePosition(Transform.localPosition) && IsParallax)
+        if (IsParallax && ValidatePosition(Transform.localPosition))
         {
             Transform.localPosition = InitialPos;
             Move(Transform);

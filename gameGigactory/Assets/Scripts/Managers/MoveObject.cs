@@ -39,14 +39,6 @@ class MoveObject
 
     public bool ValidatePosition(Vector3 RefPos)
     {
-        if (RefPos == FinalPos)
-            return true;
-        else
-            return false;
-    }
-
-    public IEnumerator WaitForObjectToStop(Vector3 RefPos)
-    {
-        yield return new WaitUntil(() => ValidatePosition(RefPos));
+        return RefPos == FinalPos;
     }
 }

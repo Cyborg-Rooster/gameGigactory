@@ -29,36 +29,40 @@ public class ProductResourceController : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
         MovementController = GetComponent<MovementController>();
         MovementController.Initialize();
-        MovementController.ChangeFinalPositionAndMove(new Vector3(transform.position.x, BeltYPosition, 0));
 
-        yield return MovementController.WaitToComeFinalPosition();
+        MovementController.ChangeFinalPositionAndMove(new Vector3(transform.localPosition.x, BeltYPosition, 0));
 
-        MovementController.ChangeFinalPositionAndMove(new Vector3(finalPosition.x, transform.position.y, 0));
+        yield return MovementController.WaitForObjectToStop();
+        Debug.Log("Teste");
 
-        yield return MovementController.WaitToComeFinalPosition();
+        MovementController.ChangeFinalPositionAndMove(new Vector3(finalPosition.x, transform.localPosition.y, 0));
+
+        yield return MovementController.WaitForObjectToStop();
 
         MovementController.ChangeFinalPositionAndMove(finalPosition);
 
-        yield return MovementController.WaitToComeFinalPosition();
+        yield return MovementController.WaitForObjectToStop();
 
         MovementController.CanMove = false;
     }
 
     public IEnumerator WaitForComeToProductBox(Vector3 ProductBox)
     {
-        MovementController.ChangeFinalPositionAndMove(new Vector3(transform.position.x, BeltYPosition, 0));
+        PrepareProduct();
+        MovementController.ChangeFinalPositionAndMove(new Vector3(transform.localPosition.x, BeltYPosition, 0));
         MovementController.CanMove = true;
 
-        yield return MovementController.WaitToComeFinalPosition();
+        yield return MovementController.WaitForObjectToStop();
 
-        MovementController.ChangeFinalPositionAndMove(new Vector3(ProductBox.x, transform.position.y, 0));
+        MovementController.ChangeFinalPositionAndMove(new Vector3(ProductBox.x, transform.localPosition.y, 0));
 
-        yield return MovementController.WaitToComeFinalPosition();
+        yield return MovementController.WaitForObjectToStop();
 
         MovementController.ChangeFinalPositionAndMove(ProductBox);
 
-        yield return MovementController.WaitToComeFinalPosition();
+        yield return MovementController.WaitForObjectToStop();
 
         MovementController.CanMove = false;
+        Destroy(gameObject);
     }
 }

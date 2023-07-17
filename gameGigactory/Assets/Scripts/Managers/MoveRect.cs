@@ -14,7 +14,7 @@ class MoveRect : MoveObject
         KeepCoordinade();
         Move(Rect);
 
-        if(ValidatePosition(Rect.localPosition) && IsParallax)
+        if(IsParallax && ValidatePosition(Rect.localPosition))
         {
             Rect.localPosition = InitialPos;
             Move(Rect);

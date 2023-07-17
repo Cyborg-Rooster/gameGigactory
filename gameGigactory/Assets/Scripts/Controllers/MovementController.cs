@@ -41,8 +41,9 @@ class MovementController : MonoBehaviour
         CanMove = true;
     }
 
-    public IEnumerator WaitToComeFinalPosition()
+
+    public IEnumerator WaitForObjectToStop()
     {
-        yield return MoveTransform.WaitForObjectToStop(transform.position);
+        yield return new WaitUntil(() => MoveTransform.ValidatePosition(transform.localPosition));
     }
 }
