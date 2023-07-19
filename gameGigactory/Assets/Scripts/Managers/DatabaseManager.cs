@@ -17,11 +17,11 @@ public class DatabaseManager
         Database = new SqliteConnection(new SqliteConnection("URI=file:" + Connection));
         SetDatabaseActive(true);
 
-        return ReturnValueAsInt(CommonQuery.Select("COUNT(*)", "SQLITE_MASTER")) > 0;
+        bool databaseExist = int.Parse(CommonQuery.Select("COUNT(*)", "SQLITE_MASTER")) > 0;
 
-        //if (!databaseExist) DatabaseSynchronizer.Synch();
+        if (!databaseExist) DatabaseSynchManager.Synch();
 
-        //return databaseExist;
+        return databaseExist;
     }
 
     public static void RunQuery(string query)
@@ -33,7 +33,7 @@ public class DatabaseManager
         cmd.ExecuteReader();
     }
 
-    public static string ReturnValueAsString(string query)
+    public static string ReturnValue(string query)
     {
         IDbCommand cmd;
         IDataReader reader;
@@ -43,10 +43,15 @@ public class DatabaseManager
         cmd.CommandText = query;
         reader = cmd.ExecuteReader();
 
-        return reader[0].ToString();
+        string tmp =reader[0].ToString();
+
+        cmd.Dispose();
+        reader.Dispose();
+
+        return tmp;
     }
 
-    public static int ReturnValueAsInt(string query)
+    public static string[,] ReturnAllValues(string query)
     {
         IDbCommand cmd;
         IDataReader reader;
@@ -56,7 +61,20 @@ public class DatabaseManager
         cmd.CommandText = query;
         reader = cmd.ExecuteReader();
 
-        return Convert.ToInt32(reader[0]);
+        DataTable dt = new DataTable();
+        dt.Load(reader);
+
+        string[,] tmp = new string[reader.FieldCount, dt.Rows.Count];
+
+        for(int y = 0; y < dt.Rows.Count; y++)
+        {
+            for (int x = 0; x < reader.FieldCount; x++) tmp[x, y] = reader[x].ToString();
+        }
+
+        cmd.Dispose();
+        reader.Dispose();
+        
+        return tmp;
     }
 
     public static void SetDatabaseActive(bool active)

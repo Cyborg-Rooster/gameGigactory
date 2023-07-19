@@ -259,9 +259,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 106.79177
+  field of view: 106.73138
   orthographic: 1
-  orthographic size: 4.663717
+  orthographic size: 4.658586
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 798620164}
   - component: {fileID: 798620163}
   m_Layer: 0
-  m_Name: floor-t2
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 1101720609}
   - component: {fileID: 1101720608}
   m_Layer: 0
-  m_Name: rooms-t2
+  m_Name: rooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
