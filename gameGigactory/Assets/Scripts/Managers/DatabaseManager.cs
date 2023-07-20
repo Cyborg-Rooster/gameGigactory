@@ -17,7 +17,7 @@ public class DatabaseManager
         Database = new SqliteConnection(new SqliteConnection("URI=file:" + Connection));
         SetDatabaseActive(true);
 
-        bool databaseExist = int.Parse(CommonQuery.Select("COUNT(*)", "SQLITE_MASTER")) > 0;
+        bool databaseExist = int.Parse(ReturnValue(CommonQuery.Select("COUNT(*)", "SQLITE_MASTER"))) > 0;
 
         if (!databaseExist) DatabaseSynchManager.Synch();
 
@@ -51,7 +51,7 @@ public class DatabaseManager
         return tmp;
     }
 
-    public static string[,] ReturnAllValues(string query)
+    public static IDataReader ReturnAllValues(string query)
     {
         IDbCommand cmd;
         IDataReader reader;
@@ -64,12 +64,7 @@ public class DatabaseManager
         DataTable dt = new DataTable();
         dt.Load(reader);
 
-        string[,] tmp = new string[reader.FieldCount, dt.Rows.Count];
-
-        for(int y = 0; y < dt.Rows.Count; y++)
-        {
-            for (int x = 0; x < reader.FieldCount; x++) tmp[x, y] = reader[x].ToString();
-        }
+        var tmp = reader;
 
         cmd.Dispose();
         reader.Dispose();
