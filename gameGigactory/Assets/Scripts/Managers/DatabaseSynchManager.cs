@@ -65,6 +65,42 @@ class DatabaseSynchManager
                 "0, 0, 1, 1"
             )
         );
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
+                "SHEDS",
+                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
+                "0, 1, 2, 1"
+            )
+        );
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
+                "SHEDS",
+                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
+                "0, 2, 3, 1"
+            )
+        );
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
+                "SHEDS",
+                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
+                "0, 3, 1, 1"
+            )
+        );
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
+                "SHEDS",
+                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
+                "0, 4, 2, 1"
+            )
+        );
         #endregion
     }
 }

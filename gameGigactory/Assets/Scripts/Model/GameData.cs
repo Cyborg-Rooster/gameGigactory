@@ -16,91 +16,94 @@ class GameData
 
     public static void Load()
     {
-        DataTable dt = new DataTable();
+        try
+        {            var brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "SHEDS"));
+            while(brute.Read())
+            {
+                Sheds.Add
+                (
+                    new Shed()
+                    {
+                        ID = brute.GetInt32(0),
+                        BeltsCounts = brute.GetInt32(1),
+                        RoomsCount = brute.GetInt32(2),
+                        FloorType = brute.GetInt32(3),
+                        TrucksCount = brute.GetInt32(4)
+                    }
+                );
+            }
 
-        var brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "SHEDS"));
-        dt.Load(brute);
+            brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "ROOMS"));
+            while (brute.Read())
+            {
+                Rooms.Add
+                (
+                    new Room()
+                    {
+                        ID = brute.GetInt32(0),
+                        ShedID = brute.GetInt32(1),
+                        Type = brute.GetInt32(2)
+                    }
+                );
+            }
 
-        for (int i = 0; i < dt.Rows.Count; i++)
-        {
-            Sheds.Add
-            (
-                new Shed()
-                {
-                    ID = (int)brute["SHED_ID"],
-                    BeltsCounts = (int)brute["BELTS_COUNT"],
-                    RoomsCount = (int)brute["ROOMS_COUNT"],
-                    FloorType = (int)brute["FLOOR_TYPE"],
-                    TrucksCount = (int)brute["TRUCKS_COUNT"]
-                }
-            );
+            brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "TRUCKS"));
+            while (brute.Read())
+            {
+                Trucks.Add
+                (
+                    new Truck()
+                    {
+                        ID = brute.GetInt32(0),
+                        ShedID = brute.GetInt32(1),
+                        Quality = brute.GetInt32(2)
+                    }
+                );
+            }
+
+            brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "BELTS"));
+            while (brute.Read())
+            {
+                Belts.Add
+                (
+                    new Belt()
+                    {
+                        ID = brute.GetInt32(0),
+                        ShedID = brute.GetInt32(1),
+                        WorkbenchCount = brute.GetInt32(2),
+                        Quality = brute.GetInt32(3),
+                        ResourcesBoxQuality = brute.GetInt32(4),
+                        ProductBoxQuality = brute.GetInt32(5)
+                    }
+                );
+            }
+
+            brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "WORKBENCHS"));
+            while (brute.Read())
+            {
+                Workbenches.Add
+                (
+                    new Workbench()
+                    {
+                        ID = brute.GetInt32(0),
+                        BeltID = brute.GetInt32(1),
+                        WorkerType = brute.GetInt32(2)
+                    }
+                );
+            }
         }
-
-        brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "ROOMS"));
-        dt.Load(brute);
-
-        for (int i = 0; i < dt.Rows.Count; i++)
+        catch (Exception ex)
         {
-            Rooms.Add
-            (
-                new Room()
-                {
-                    ID = (int)brute["ROOM_ID"],
-                    ShedID = (int)brute["SHED_ID"],
-                    Type = (int)brute["TYPE"]
-                }
-            );
+            Debug.LogError(ex.StackTrace);
         }
+    }
 
-        brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "TRUCKS"));
-        dt.Load(brute);
-
-        for (int i = 0; i < dt.Rows.Count; i++)
-        {
-            Trucks.Add
-            (
-                new Truck()
-                {
-                    ID = (int)brute["TRUCK_ID"],
-                    ShedID = (int)brute["SHED_ID"],
-                    Quality = (int)brute["QUALITY"]
-                }
-            );
-        }
-
-        brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "BELTS"));
-        dt.Load(brute);
-
-        for (int i = 0; i < dt.Rows.Count; i++)
-        {
-            Belts.Add
-            (
-                new Belt()
-                {
-                    ID = (int)brute["BELT_ID"],
-                    ShedID = (int)brute["SHED_ID"],
-                    WorkbenchCount = (int)brute["WORKBENCH_COUNT"],
-                    Quality = (int)brute["QUALITY"],
-                    ResourcesBoxQuality = (int)brute["RESOURCES_BOX_QUALITY"],
-                    ProductBoxQuality = (int)brute["PRODUCT_BOX_QUALITY"]
-                }
-            );
-        }
-
-        brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "WORKBENCHS"));
-        dt.Load(brute);
-
-        for (int i = 0; i < dt.Rows.Count; i++)
-        {
-            Workbenches.Add
-            (
-                new Workbench()
-                {
-                    ID = (int)brute["WORKBENCH_ID"],
-                    BeltID = (int)brute["BELT_ID"],
-                    WorkerType = (int)brute["WORKER_TYPE"]
-                }
-            );
-        }
+    public static void Teste()
+    {
+        Debug.Log(Sheds.Count);
+        Debug.Log(Rooms.Count);
+        Debug.Log(Trucks.Count);
+        Debug.Log(Belts.Count);
+        Debug.Log(Workbenches.Count);
     }
 }

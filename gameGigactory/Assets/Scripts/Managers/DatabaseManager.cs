@@ -61,14 +61,10 @@ public class DatabaseManager
         cmd.CommandText = query;
         reader = cmd.ExecuteReader();
 
-        DataTable dt = new DataTable();
-        dt.Load(reader);
+        //DataTable dt = new DataTable();
+        //dt.Load(reader);
 
         var tmp = reader;
-
-        cmd.Dispose();
-        reader.Dispose();
-        
         return tmp;
     }
 
