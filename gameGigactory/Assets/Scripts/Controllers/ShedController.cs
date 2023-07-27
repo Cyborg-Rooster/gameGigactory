@@ -7,18 +7,34 @@ using UnityEngine;
 
 class ShedController : MonoBehaviour
 {
-    [Header("Assets")]
-    [SerializeField] List<Sprite> FloorTypes = new List<Sprite>();
-    [SerializeField] List<Sprite> RoomsType = new List<Sprite>();
+    //[Header("Assets")]
+    //[SerializeField] List<Sprite> FloorTypes = new List<Sprite>();
+    //[SerializeField] List<Sprite> RoomsType = new List<Sprite>();
 
     [Header("Controllers")]
-    [SerializeField] SpriteRenderer Rooms;
-    [SerializeField] SpriteRenderer Floor;
+    [SerializeField] SpriteLevelController Rooms;
+    [SerializeField] SpriteLevelController Floor;
+
+    [SerializeField] List<BeltController> BeltControllers;
 
     public void InstantiateObjects(int index)
     {
         Shed shed = GameData.Sheds[index];
-        if(shed.RoomsCount > 0) Rooms.sprite = RoomsType[shed.RoomsCount];
-        Floor.sprite = FloorTypes[shed.FloorType];
+        var tmp = GameData.Belts.Where(x => x.ShedID == index).ToArray();
+
+        Rooms.ChangeSpriteLevel(shed.RoomsCount);
+        Floor.ChangeSpriteLevel(shed.FloorType);
+
+        Debug.Log(shed.BeltsCounts);
+
+        for(int i = 0; i < 3; i++)
+        {
+            if (i <= shed.BeltsCounts)
+            {
+                BeltControllers[i].InstantiateObjects(tmp[i]);
+                if (i + 1 != 3 && i + 2 > shed.BeltsCounts) BeltControllers[i].ChangeSpriteLevel(2);
+            }
+            else BeltControllers[i].ChangeSpriteLevel(0);
+        }
     }
 }

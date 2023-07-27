@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5211448573860323369}
   - component: {fileID: 4796196063085727426}
+  - component: {fileID: 2969808255642321629}
+  - component: {fileID: 166690882326902997}
   m_Layer: 0
   m_Name: Workbench-1
   m_TagString: Untagged
@@ -84,6 +86,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2969808255642321629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162796483397459597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &166690882326902997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162796483397459597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
+  - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
+  LevelsAnimatorControllers: []
 --- !u!1 &960574230094205987
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,19 +251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb22891a65456941a9de3affffdab7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloorTypes:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: e8e9eb32d646a9d40b8cd0fdededbc5f, type: 3}
-  - {fileID: 21300000, guid: f0f7c739fbfe7e148a891cb5a78fe483, type: 3}
-  - {fileID: 21300000, guid: d3909918920ae3a44a588dd50aff56de, type: 3}
-  RoomsType:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 563af228635abaa4585b0ab75efb1748, type: 3}
-  - {fileID: 21300000, guid: e6a54bcc824730f419a6b436c54beb63, type: 3}
-  - {fileID: 21300000, guid: c411e5aa8178f2840adb33f10c3a126c, type: 3}
-  - {fileID: 21300000, guid: fc78fe287d7b8d94c90e3c4b232047d9, type: 3}
-  Rooms: {fileID: 3636138244584005208}
-  Floor: {fileID: 3636138243006089339}
+  Rooms: {fileID: 2121122055924700047}
+  Floor: {fileID: 4881418254957052276}
+  BeltControllers:
+  - {fileID: 803366754736657374}
+  - {fileID: 1301448821341641273}
+  - {fileID: 9031846707135489494}
 --- !u!1 &998063084086663694
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +267,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6212509238729715806}
   - component: {fileID: 99990032291167407}
+  - component: {fileID: 4216773639491404655}
+  - component: {fileID: 2509297132309964397}
   m_Layer: 0
   m_Name: Workbench-3
   m_TagString: Untagged
@@ -317,6 +343,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4216773639491404655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998063084086663694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2509297132309964397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998063084086663694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
+  - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
+  LevelsAnimatorControllers: []
 --- !u!1 &1959273864073978355
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +497,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1046310149923016325}
   - component: {fileID: 77189996919381176}
+  - component: {fileID: 5031719333658284298}
+  - component: {fileID: 6094520675469544387}
   m_Layer: 0
   m_Name: Workbench-2
   m_TagString: Untagged
@@ -516,6 +573,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5031719333658284298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103037956481577399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6094520675469544387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103037956481577399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
+  - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
+  LevelsAnimatorControllers: []
 --- !u!1 &3371674285924634491
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3636138243006089340}
   - component: {fileID: 3636138243006089339}
+  - component: {fileID: 4881418254957052276}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -684,6 +771,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4881418254957052276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636138243006089338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites:
+  - {fileID: 21300000, guid: e8e9eb32d646a9d40b8cd0fdededbc5f, type: 3}
+  - {fileID: 21300000, guid: f0f7c739fbfe7e148a891cb5a78fe483, type: 3}
+  - {fileID: 21300000, guid: d3909918920ae3a44a588dd50aff56de, type: 3}
+  LevelsAnimatorControllers: []
 --- !u!1 &3636138243338029836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3636138244584005209}
   - component: {fileID: 3636138244584005208}
+  - component: {fileID: 2121122055924700047}
   m_Layer: 0
   m_Name: rooms
   m_TagString: Untagged
@@ -1104,6 +1209,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2121122055924700047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636138244584005223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 563af228635abaa4585b0ab75efb1748, type: 3}
+  - {fileID: 21300000, guid: e6a54bcc824730f419a6b436c54beb63, type: 3}
+  - {fileID: 21300000, guid: c411e5aa8178f2840adb33f10c3a126c, type: 3}
+  - {fileID: 21300000, guid: fc78fe287d7b8d94c90e3c4b232047d9, type: 3}
+  LevelsAnimatorControllers: []
 --- !u!1 &3636138244626185817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1576,8 @@ GameObject:
   - component: {fileID: 3636138244997232108}
   - component: {fileID: 3636138244997232107}
   - component: {fileID: 3636138244997232110}
+  - component: {fileID: 803366754736657374}
+  - component: {fileID: 71592113932039424}
   m_Layer: 0
   m_Name: BeltSlot1
   m_TagString: Untagged
@@ -1560,7 +1686,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3636138244997232106}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5771eb49d6cd7d94b9e781b37f19cd35, type: 3}
   m_Name: 
@@ -1573,6 +1699,41 @@ MonoBehaviour:
   - {fileID: 3636138244767894253}
   - {fileID: 3636138244626185818}
   - {fileID: 3636138244139431222}
+--- !u!114 &803366754736657374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636138244997232106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2584584e62ca1d49812adf6a97fee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorkbenchControllers:
+  - {fileID: 2969808255642321629}
+  - {fileID: 5031719333658284298}
+  - {fileID: 4216773639491404655}
+  - {fileID: 5169791135818642137}
+--- !u!114 &71592113932039424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636138244997232106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites: []
+  LevelsAnimatorControllers:
+  - {fileID: 9100000, guid: 856ad2ace0aa44b4c99b58c22b60b2c3, type: 2}
+  - {fileID: 9100000, guid: d57c229ef60f33a47b6dd5faec7ce937, type: 2}
+  - {fileID: 9100000, guid: dd24d1ac66bca7848963875afd0a9310, type: 2}
+  - {fileID: 9100000, guid: 724e0c6d5c191514b8e0921feb2270e3, type: 2}
 --- !u!1 &4743381624983971480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1746,8 @@ GameObject:
   - component: {fileID: 6262466863859798029}
   - component: {fileID: 5019632152619238746}
   - component: {fileID: 7999661203622387822}
+  - component: {fileID: 9031846707135489494}
+  - component: {fileID: 8616500946763069240}
   m_Layer: 0
   m_Name: BeltSlot3
   m_TagString: Untagged
@@ -1693,7 +1856,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4743381624983971480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5771eb49d6cd7d94b9e781b37f19cd35, type: 3}
   m_Name: 
@@ -1706,6 +1869,41 @@ MonoBehaviour:
   - {fileID: 1046310149923016325}
   - {fileID: 6212509238729715806}
   - {fileID: 3184399807768129005}
+--- !u!114 &9031846707135489494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743381624983971480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2584584e62ca1d49812adf6a97fee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorkbenchControllers:
+  - {fileID: 2969808255642321629}
+  - {fileID: 5031719333658284298}
+  - {fileID: 4216773639491404655}
+  - {fileID: 5169791135818642137}
+--- !u!114 &8616500946763069240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743381624983971480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites: []
+  LevelsAnimatorControllers:
+  - {fileID: 9100000, guid: 856ad2ace0aa44b4c99b58c22b60b2c3, type: 2}
+  - {fileID: 9100000, guid: d57c229ef60f33a47b6dd5faec7ce937, type: 2}
+  - {fileID: 9100000, guid: dd24d1ac66bca7848963875afd0a9310, type: 2}
+  - {fileID: 9100000, guid: 724e0c6d5c191514b8e0921feb2270e3, type: 2}
 --- !u!1 &5018658561536976716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2252,8 @@ GameObject:
   - component: {fileID: 2728860837621260619}
   - component: {fileID: 2842613322246967080}
   - component: {fileID: 3007534905921481930}
+  - component: {fileID: 1301448821341641273}
+  - component: {fileID: 2219102193066654747}
   m_Layer: 0
   m_Name: BeltSlot2
   m_TagString: Untagged
@@ -2162,7 +2362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8539655858123717355}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5771eb49d6cd7d94b9e781b37f19cd35, type: 3}
   m_Name: 
@@ -2175,6 +2375,41 @@ MonoBehaviour:
   - {fileID: 6942445056918840500}
   - {fileID: 2504152820688722968}
   - {fileID: 5791679311019986145}
+--- !u!114 &1301448821341641273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539655858123717355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2584584e62ca1d49812adf6a97fee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorkbenchControllers:
+  - {fileID: 2969808255642321629}
+  - {fileID: 5031719333658284298}
+  - {fileID: 4216773639491404655}
+  - {fileID: 5169791135818642137}
+--- !u!114 &2219102193066654747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539655858123717355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites: []
+  LevelsAnimatorControllers:
+  - {fileID: 9100000, guid: 856ad2ace0aa44b4c99b58c22b60b2c3, type: 2}
+  - {fileID: 9100000, guid: d57c229ef60f33a47b6dd5faec7ce937, type: 2}
+  - {fileID: 9100000, guid: dd24d1ac66bca7848963875afd0a9310, type: 2}
+  - {fileID: 9100000, guid: 724e0c6d5c191514b8e0921feb2270e3, type: 2}
 --- !u!1 &9149433097896023972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3184399807768129005}
   - component: {fileID: 1582327616565138669}
+  - component: {fileID: 5169791135818642137}
+  - component: {fileID: 1977014023792947130}
   m_Layer: 0
   m_Name: Workbench-4
   m_TagString: Untagged
@@ -2343,3 +2580,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5169791135818642137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201377744282832934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1977014023792947130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201377744282832934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3becd02480a2da64e9a5300c41822879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
+  - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
+  LevelsAnimatorControllers: []

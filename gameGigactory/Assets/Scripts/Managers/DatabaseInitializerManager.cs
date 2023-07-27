@@ -9,8 +9,7 @@ class DatabaseInitializerManager
 {
     public static void Init()
     {
-        Debug.Log(DatabaseManager.SetDatabase());
+        DatabaseManager.SetDatabase();
         GameData.Load();
-        GameData.Teste();
     }
 }

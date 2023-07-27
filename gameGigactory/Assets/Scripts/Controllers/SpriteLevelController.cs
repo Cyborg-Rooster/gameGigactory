@@ -11,7 +11,7 @@ public class SpriteLevelController : MonoBehaviour
     SpriteRenderer SpriteRenderer;
     Animator Animator;
 
-    private void Start()
+    private void Awake()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
         Animator = GetComponent<Animator>();

@@ -11,6 +11,21 @@ class BeltController : MonoBehaviour
 
     public void InstantiateObjects(Belt belt)
     {
-        //List<Workbench> workbenches = GameData.Workbenches.Where(x => GameData.Workbenches.Contains(x.BeltID))
+        List<Workbench> workbenches = GameData.Workbenches.Where(x => x.BeltID == belt.ID).ToList();
+        for(int i = 1; i < 5; i++)
+        {
+            if (i <= workbenches.Count) 
+            { 
+                WorkbenchControllers[i - 1].ChangeSpriteLevel(1); 
+                if(i != 4 && i + 1 > workbenches.Count) WorkbenchControllers[i - 1].ChangeSpriteLevel(2);
+            }
+            else WorkbenchControllers[i - 1].ChangeSpriteLevel(0);
+        }
+        ChangeSpriteLevel(belt.Quality);
+    }
+
+    public void ChangeSpriteLevel(int level)
+    {
+        GetComponent<SpriteLevelController>().ChangeSpriteLevel(level);
     }
 }

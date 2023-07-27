@@ -17,7 +17,8 @@ class GameData
     public static void Load()
     {
         try
-        {            var brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "SHEDS"));
+        {   
+            var brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "SHEDS"));
             while(brute.Read())
             {
                 Sheds.Add
@@ -96,14 +97,5 @@ class GameData
         {
             Debug.LogError(ex.StackTrace);
         }
-    }
-
-    public static void Teste()
-    {
-        Debug.Log(Sheds.Count);
-        Debug.Log(Rooms.Count);
-        Debug.Log(Trucks.Count);
-        Debug.Log(Belts.Count);
-        Debug.Log(Workbenches.Count);
     }
 }
