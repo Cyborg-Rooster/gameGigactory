@@ -23,7 +23,7 @@ public class SpriteLevelController : MonoBehaviour
             Animator.runtimeAnimatorController = LevelsAnimatorControllers[level];
             return;
         }
-
+        Debug.Log(name + " " + level);
         SpriteRenderer.sprite = LevelsSprites[level];
     }
 }

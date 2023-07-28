@@ -16,15 +16,20 @@ class GameController : MonoBehaviour
     [SerializeField] GameObject Shed;
     private void Start()
     {
+        StartCoroutine(EsperarOGalpaoTerminarARotina());
+    }
+
+    System.Collections.IEnumerator EsperarOGalpaoTerminarARotina()
+    {
         float YPosToSpawn = 0f;
-        foreach(var s in GameData.Sheds)
+        foreach (var s in GameData.Sheds)
         {
             var controller = Instantiate(Shed, ShedParent).GetComponent<ShedController>();
             Sheds.Add(controller);
             controller.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
             controller.InstantiateObjects(s.ID - 1);
-
             YPosToSpawn += 9.92f;
+            yield return new WaitUntil(() => controller.Loaded);
         }
     }
 
