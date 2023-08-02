@@ -26,7 +26,7 @@ class GameData
                     new Shed()
                     {
                         ID = brute.GetInt32(0),
-                        BeltsCounts = brute.GetInt32(1),
+                        BeltsCount = brute.GetInt32(1),
                         RoomsCount = brute.GetInt32(2),
                         FloorType = brute.GetInt32(3),
                         TrucksCount = brute.GetInt32(4)
@@ -97,5 +97,55 @@ class GameData
         {
             Debug.LogError(ex.StackTrace);
         }
+    }
+
+    public static void SaveWorkbench(Workbench workbench)
+    {
+        Workbenches.Add(workbench);
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
+                "WORKBENCHS",
+                "BELT_ID, WORKER_TYPE",
+                $"{workbench.BeltID}, {workbench.WorkerType}"
+            )
+        );
+    }
+
+    public static void SaveBelt(Belt belt)
+    {
+        Belts.Add(belt);
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
+                "BELTS",
+                "SHED_ID, WORKBENCH_COUNT, QUALITY, RESOURCES_BOX_QUALITY, PRODUCT_BOX_QUALITY",
+                $"{belt.ShedID}, {belt.WorkbenchCount}, {belt.Quality}, {belt.ResourcesBoxQuality}, {belt.ProductBoxQuality}"
+            )
+        );
+
+        Workbench workbench = new Workbench()
+        {
+            ID = Workbenches.Count() + 1,
+            BeltID = belt.ID,
+            WorkerType = 0
+        };
+        SaveWorkbench(workbench);
+    }
+
+    public static void UpdateShed(Shed shed)
+    {
+        Sheds[Sheds.FindIndex(x => x.ID == shed.ID)] = shed;
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Update
+            (
+                "SHEDS",
+                $"BELTS_COUNT = {Belts.Count()}",
+                $"SHED_ID = {shed.ID}"
+            )
+        );
     }
 }

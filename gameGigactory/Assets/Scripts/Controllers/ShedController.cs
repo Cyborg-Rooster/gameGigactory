@@ -23,7 +23,7 @@ class ShedController : MonoBehaviour
 
     Shed Shed;
 
-    public void InstantiateObjects(int index)
+    public void InstantiateObjects(int index, ButtonsController buttonsController)
     {
         Shed = GameData.Sheds.Where(x => x.ID == index).First();
         var tmp = GameData.Belts.Where(x => x.ShedID == Shed.ID).ToArray();
@@ -31,18 +31,9 @@ class ShedController : MonoBehaviour
         Rooms.ChangeSpriteLevel(Shed.RoomsCount);
         Floor.ChangeSpriteLevel(Shed.FloorType);
 
-        Debug.Log(Shed.BeltsCounts);
+        PlusButton = buttonsController.BeltButtons;
 
-        //for(int i = 0; i < 3; i++)
-        //{
-        //    if (i <= shed.BeltsCounts)
-        //    {
-        //        BeltControllers[i].InstantiateObjects(tmp[i]);
-        //        if (i + 1 != 3 && i + 2 > shed.BeltsCounts) BeltControllers[i].ChangeSpriteLevel(2);
-        //    }
-        //    else BeltControllers[i].ChangeSpriteLevel(0);
-        //}
-        var max = Shed.BeltsCounts;
+        var max = Shed.BeltsCount;
         for (int i = 0; i < 3; i++)
         {
             if (max > i)
@@ -50,8 +41,35 @@ class ShedController : MonoBehaviour
                 BeltControllers[i].gameObject.SetActive(true);
                 BeltControllers[i].InstantiateObjects(tmp[i]);
             }
-            //else if (max == i) PlusButton[i].SetActive(true);
+            else if (max == i) PlusButton[i].SetActive(true);
         }
         Loaded = true;
+    }
+
+    public void Addbelt()
+    {
+        Belt belt = new Belt()
+        {
+            ID = GameData.Belts.Count() + 1,
+            ShedID = Shed.ID,
+            Quality = 0,
+            WorkbenchCount = 1,
+            ProductBoxQuality = 0,
+            ResourcesBoxQuality = 0
+        };
+
+        BeltControllers[Shed.BeltsCount].gameObject.SetActive(true);
+        BeltControllers[Shed.BeltsCount].InstantiateObjects(belt);
+
+        PlusButton[Shed.BeltsCount].SetActive(false);
+        if (Shed.BeltsCount < 2) PlusButton[Shed.BeltsCount + 1].SetActive(true);
+
+        Shed.BeltsCount++;
+
+        GameData.SaveBelt(belt);
+        GameData.UpdateShed(Shed);
+
+        Shed = GameData.Sheds.Where(x => x.ID == Shed.ID).First();
+
     }
 }
