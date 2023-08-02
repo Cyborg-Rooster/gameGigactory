@@ -11,7 +11,7 @@ class BeltController : MonoBehaviour
 
     public void InstantiateObjects(Belt belt)
     {
-        var max = belt.WorkbenchCount - 1;
+        var max = belt.WorkbenchCount;
         //List<Workbench> workbenches = GameData.Workbenches.Where(x => x.BeltID == belt.ID).ToList();
         //for(int i = 1; i < 5; i++)
         //{

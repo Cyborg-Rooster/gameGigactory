@@ -24,10 +24,10 @@ class GameController : MonoBehaviour
         float YPosToSpawn = 0f;
         foreach (var s in GameData.Sheds)
         {
-            var controller = Instantiate(Shed, ShedParent).GetComponent<ShedController>();
+            ShedController controller = Instantiate(Shed, ShedParent).GetComponent<ShedController>();
             Sheds.Add(controller);
             controller.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
-            controller.InstantiateObjects(s.ID - 1);
+            controller.InstantiateObjects(s.ID);
             YPosToSpawn += 9.92f;
             yield return new WaitUntil(() => controller.Loaded);
         }

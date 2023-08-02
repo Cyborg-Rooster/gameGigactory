@@ -25,6 +25,7 @@ class ShedController : MonoBehaviour
 
     public void InstantiateObjects(int index)
     {
+        Shed = GameData.Sheds.Where(x => x.ID == index).First();
         var tmp = GameData.Belts.Where(x => x.ShedID == Shed.ID).ToArray();
 
         Rooms.ChangeSpriteLevel(Shed.RoomsCount);
@@ -41,7 +42,7 @@ class ShedController : MonoBehaviour
         //    }
         //    else BeltControllers[i].ChangeSpriteLevel(0);
         //}
-        var max = Shed.BeltsCounts - 1;
+        var max = Shed.BeltsCounts;
         for (int i = 0; i < 3; i++)
         {
             if (max > i)
@@ -49,7 +50,7 @@ class ShedController : MonoBehaviour
                 BeltControllers[i].gameObject.SetActive(true);
                 BeltControllers[i].InstantiateObjects(tmp[i]);
             }
-            else if (max == i) PlusButton[i].SetActive(true);
+            //else if (max == i) PlusButton[i].SetActive(true);
         }
         Loaded = true;
     }

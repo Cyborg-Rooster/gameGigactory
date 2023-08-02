@@ -62,43 +62,27 @@ class DatabaseSynchManager
             (
                 "SHEDS",
                 "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
-                "0, 0, 1, 1"
+                "2, 0, 0, 1"
             )
         );
+
         DatabaseManager.RunQuery
         (
             CommonQuery.Add
             (
-                "SHEDS",
-                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
-                "0, 1, 2, 1"
+                "BELTS",
+                "SHED_ID, WORKBENCH_COUNT, QUALITY, RESOURCES_BOX_QUALITY, PRODUCT_BOX_QUALITY",
+                "1, 2, 0, 0, 0"
             )
         );
+
         DatabaseManager.RunQuery
         (
             CommonQuery.Add
             (
-                "SHEDS",
-                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
-                "0, 2, 3, 1"
-            )
-        );
-        DatabaseManager.RunQuery
-        (
-            CommonQuery.Add
-            (
-                "SHEDS",
-                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
-                "0, 3, 1, 1"
-            )
-        );
-        DatabaseManager.RunQuery
-        (
-            CommonQuery.Add
-            (
-                "SHEDS",
-                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
-                "0, 4, 2, 1"
+                "BELTS",
+                "SHED_ID, WORKBENCH_COUNT, QUALITY, RESOURCES_BOX_QUALITY, PRODUCT_BOX_QUALITY",
+                "1, 3, 0, 0, 0"
             )
         );
         #endregion
