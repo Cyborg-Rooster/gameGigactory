@@ -148,4 +148,18 @@ class GameData
             )
         );
     }
+
+    public static void UpdateBelt(Belt belt)
+    {
+        Belts[Belts.FindIndex(x => x.ID == belt.ID)] = belt;
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Update
+            (
+                "BELTS",
+                $"WORKBENCH_COUNT = {Belts.Count()}",
+                $"SHED_ID = {belt.ID}"
+            )
+        );
+    }
 }

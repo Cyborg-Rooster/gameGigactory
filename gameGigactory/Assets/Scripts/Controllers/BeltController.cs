@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 class BeltController : MonoBehaviour
 {
     [SerializeField] List<WorkbenchController> WorkbenchControllers;
+    [SerializeField] List<GameObject> PlusButton;
 
-    public void InstantiateObjects(Belt belt)
+    Belt Belt;
+
+    public void InstantiateObjects(Belt belt, ButtonsController buttonsController)
     {
         var max = belt.WorkbenchCount;
-        //List<Workbench> workbenches = GameData.Workbenches.Where(x => x.BeltID == belt.ID).ToList();
-        //for(int i = 1; i < 5; i++)
-        //{
-        //    if (i <= workbenches.Count) 
-        //    { 
-        //        WorkbenchControllers[i - 1].ChangeSpriteLevel(1); 
-        //        if(i != 4 && i + 1 > workbenches.Count) WorkbenchControllers[i - 1].ChangeSpriteLevel(2);
-        //    }
-        //    else WorkbenchControllers[i - 1].ChangeSpriteLevel(0);
-        //}
+        PlusButton = buttonsController.Buttons;
+
+        Belt = belt;
+
         for (int i = 0; i < 4; i++)
         {
-            if(max > i) WorkbenchControllers[i].ChangeSpriteLevel(1);
-            else if(max == i) WorkbenchControllers[i].ChangeSpriteLevel(2);
-            else WorkbenchControllers[i].ChangeSpriteLevel(0);
+            if (max > i) WorkbenchControllers[i].gameObject.SetActive(true);
+            else if (max == i) PlusButton[i].SetActive(true);
         }
         ChangeSpriteLevel(belt.Quality);
     }
@@ -34,5 +27,28 @@ class BeltController : MonoBehaviour
     public void ChangeSpriteLevel(int level)
     {
         GetComponent<SpriteLevelController>().ChangeSpriteLevel(level);
+    }
+
+    public void AddWorkbench()
+    {
+        Workbench workbench = new Workbench()
+        {
+            ID = GameData.Workbenches.Count() + 1,
+            BeltID = Belt.ID,
+            WorkerType = 0
+        };
+
+        WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
+        //WorkbenchControllers[Belt.WorkbenchCount].gameObject.Se
+
+        PlusButton[Belt.WorkbenchCount].SetActive(false);
+        if (Belt.WorkbenchCount < 2) PlusButton[Belt.WorkbenchCount + 1].SetActive(true);
+
+        Belt.WorkbenchCount++;
+
+        GameData.SaveWorkbench(workbench);
+        //GameData.UpdateShed(Shed);
+
+        Belt = GameData.Belts.Where(x => x.ID == Belt.ID).First();
     }
 }

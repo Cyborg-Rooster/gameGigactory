@@ -15,7 +15,8 @@ class GameController : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] GameObject Shed;
-    [SerializeField] GameObject ShedCanvas;
+    [SerializeField] GameObject BeltCanvas;
+    [SerializeField] GameObject WorkbenchCanvas;
     private void Start()
     {
         StartCoroutine(LoadSheds());
@@ -30,11 +31,15 @@ class GameController : MonoBehaviour
             controller.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
             Sheds.Add(controller);
 
-            ButtonsController buttonsController = Instantiate(ShedCanvas, UI).GetComponent<ButtonsController>();
-            buttonsController.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
-            buttonsController.SetVoid(this, controller);
+            Transform shedUITransform = Instantiate(new GameObject(), UI).transform;
+            shedUITransform.gameObject.name = $"ShedUI{s.ID}";
+            shedUITransform.position = Vector3.zero;
 
-            controller.InstantiateObjects(s.ID, buttonsController);
+            ButtonsController beltButtonsController = Instantiate(BeltCanvas, shedUITransform).GetComponent<ButtonsController>();
+            beltButtonsController.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
+            beltButtonsController.SetVoid(this, controller);
+
+            controller.InstantiateObjects(s.ID, beltButtonsController, shedUITransform, WorkbenchCanvas);
             YPosToSpawn += 9.92f;
             yield return new WaitUntil(() => controller.Loaded);
         }
@@ -43,6 +48,11 @@ class GameController : MonoBehaviour
     public void BuyBelt(ShedController shedController)
     {
         shedController.Addbelt();
+    }
+
+    public void BuyWorkbench(BeltController beltController)
+    {
+        beltController.AddWorkbench();
     }
 
     private void OnApplicationQuit()

@@ -8,14 +8,21 @@ using UnityEngine;
 
 class ButtonsController : MonoBehaviour
 {
-    public List<GameObject> BeltButtons;
-    public List<GameObject> WorbenchButtons;
+    public List<GameObject> Buttons;
 
     public void SetVoid(GameController controller, ShedController shedController)
     {
-        foreach (var button in BeltButtons) 
+        foreach (var button in Buttons) 
         {
-            UIManager.SetButtonAction(button, controller, shedController);
+            UIManager.SetBeltButtonAction(button, controller, shedController);
+        }
+    }
+
+    public void SetVoid(GameController controller, BeltController beltController)
+    {
+        foreach (var button in Buttons)
+        {
+            UIManager.SetWorkbenchButtonAction(button, controller, beltController);
         }
     }
 
