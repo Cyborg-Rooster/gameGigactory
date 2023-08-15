@@ -173,11 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b1bfd2381768047a873d6d6d045776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeltButtons:
+  Buttons:
   - {fileID: 757805969582074613}
   - {fileID: 2872344171227871688}
   - {fileID: 2683373470613135782}
-  WorbenchButtons: []
 --- !u!1 &2683373470613135782
 GameObject:
   m_ObjectHideFlags: 0

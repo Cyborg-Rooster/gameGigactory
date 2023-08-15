@@ -23,9 +23,8 @@ class ShedController : MonoBehaviour
 
     Shed Shed;
     Transform ShedUI;
-    ButtonsController WorkbenchButtons;
 
-    public void InstantiateObjects(int index, ButtonsController beltButtonsController, Transform shedUI, GameObject workbenchButtonController)
+    public void InstantiateObjects(int index, ButtonsController beltButtonsUIController, Transform shedUI)
     {
         Shed = GameData.Sheds.Where(x => x.ID == index).First();
         ShedUI = shedUI;
@@ -34,17 +33,16 @@ class ShedController : MonoBehaviour
         Rooms.ChangeSpriteLevel(Shed.RoomsCount);
         Floor.ChangeSpriteLevel(Shed.FloorType);
 
-        PlusButton = beltButtonsController.Buttons;
-
-        WorkbenchButtons = Instantiate(workbenchButtonController, shedUI).GetComponent<ButtonsController>();
+        PlusButton = beltButtonsUIController.Buttons;
 
         var max = Shed.BeltsCount;
         for (int i = 0; i < 3; i++)
         {
             if (max > i)
             {
+                //WorkbenchButtons = Instantiate(workbenchButtonController, shedUI).GetComponent<ButtonsController>();
                 BeltControllers[i].gameObject.SetActive(true);
-                BeltControllers[i].InstantiateObjects(tmp[i], WorkbenchButtons);
+                BeltControllers[i].InstantiateObjects(tmp[i], ShedUI);
             }
             else if (max == i) PlusButton[i].SetActive(true);
         }
@@ -64,7 +62,7 @@ class ShedController : MonoBehaviour
         };
 
         BeltControllers[Shed.BeltsCount].gameObject.SetActive(true);
-        BeltControllers[Shed.BeltsCount].InstantiateObjects(belt, WorkbenchButtons);
+        BeltControllers[Shed.BeltsCount].InstantiateObjects(belt, ShedUI);
 
         PlusButton[Shed.BeltsCount].SetActive(false);
         if (Shed.BeltsCount < 2) PlusButton[Shed.BeltsCount + 1].SetActive(true);

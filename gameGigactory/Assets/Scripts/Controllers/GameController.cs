@@ -16,10 +16,10 @@ class GameController : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] GameObject Shed;
     [SerializeField] GameObject BeltCanvas;
-    [SerializeField] GameObject WorkbenchCanvas;
+
     private void Start()
     {
-        StartCoroutine(LoadSheds());
+        StartCoroutine("LoadSheds");
     }
 
     System.Collections.IEnumerator LoadSheds()
@@ -39,7 +39,7 @@ class GameController : MonoBehaviour
             beltButtonsController.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
             beltButtonsController.SetVoid(this, controller);
 
-            controller.InstantiateObjects(s.ID, beltButtonsController, shedUITransform, WorkbenchCanvas);
+            controller.InstantiateObjects(s.ID, beltButtonsController, shedUITransform);
             YPosToSpawn += 9.92f;
             yield return new WaitUntil(() => controller.Loaded);
         }

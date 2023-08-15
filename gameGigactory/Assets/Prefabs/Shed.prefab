@@ -161,7 +161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6439222121937170407
 Transform:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5132197599035457424
 Transform:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6848813941836256088
 Transform:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &139277140129206588
 Transform:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8012878611585940237
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,7 +1006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4403915894386027151
 Transform:
   m_ObjectHideFlags: 0
@@ -1393,7 +1393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4403915894973014499
 Transform:
   m_ObjectHideFlags: 0
@@ -1508,7 +1508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4403915895041548617
 Transform:
   m_ObjectHideFlags: 0
@@ -1623,7 +1623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4403915895100773716
 Transform:
   m_ObjectHideFlags: 0
@@ -1872,6 +1872,7 @@ MonoBehaviour:
   - {fileID: 1291470091064598733}
   - {fileID: 7385302577176762395}
   - {fileID: 3874671825573118627}
+  WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
 --- !u!114 &1122991691911178937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1992,7 +1993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3290860165628576673
 Transform:
   m_ObjectHideFlags: 0
@@ -2191,7 +2192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7544643891316148106
 Transform:
   m_ObjectHideFlags: 0
@@ -2440,6 +2441,7 @@ MonoBehaviour:
   - {fileID: 5386217505353961139}
   - {fileID: 3886341578354728150}
   - {fileID: 5248166903697452384}
+  WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
 --- !u!114 &8716725526960990337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2476,7 +2478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2547542720631583316
 Transform:
   m_ObjectHideFlags: 0
@@ -2809,6 +2811,7 @@ MonoBehaviour:
   - {fileID: 700158892614060515}
   - {fileID: 5854537077384264528}
   - {fileID: 7859144312086888301}
+  WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
 --- !u!114 &1270059025852064674
 MonoBehaviour:
   m_ObjectHideFlags: 0

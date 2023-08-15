@@ -219,9 +219,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 106.84231
+  field of view: 106.87478
   orthographic: 1
-  orthographic size: 4.6680164
+  orthographic size: 4.6707816
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -299,7 +299,7 @@ MonoBehaviour:
   UI: {fileID: 1997765526}
   Sheds: []
   Shed: {fileID: 147407384635344462, guid: 53b8e666592e06e4bbe480519c66a5e6, type: 3}
-  ShedCanvas: {fileID: 1260106451836039437, guid: ffb382d245c2f3c4b9e9e0990adfbb1c, type: 3}
+  BeltCanvas: {fileID: 1260106451836039437, guid: ffb382d245c2f3c4b9e9e0990adfbb1c, type: 3}
 --- !u!4 &632414056
 Transform:
   m_ObjectHideFlags: 0

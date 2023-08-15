@@ -1,25 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 class BeltController : MonoBehaviour
 {
     [SerializeField] List<WorkbenchController> WorkbenchControllers;
-    [SerializeField] List<GameObject> PlusButton;
+    [SerializeField] GameObject WorkbenchButtonsController;
 
     Belt Belt;
+    ButtonsController WorkbenchButtons;
 
-    public void InstantiateObjects(Belt belt, ButtonsController buttonsController)
+    public void InstantiateObjects(Belt belt, Transform ShedUI)
     {
         var max = belt.WorkbenchCount;
-        PlusButton = buttonsController.Buttons;
-
         Belt = belt;
+
+        WorkbenchButtons = Instantiate(WorkbenchButtonsController, ShedUI).GetComponent<ButtonsController>();
+        var tmpPos = WorkbenchButtons.transform.position;
+        tmpPos.y = transform.position.y;
+        WorkbenchButtons.transform.position = tmpPos;
 
         for (int i = 0; i < 4; i++)
         {
             if (max > i) WorkbenchControllers[i].gameObject.SetActive(true);
-            else if (max == i) PlusButton[i].SetActive(true);
+            else if (max == i) WorkbenchButtons.Buttons[i].SetActive(true);
         }
         ChangeSpriteLevel(belt.Quality);
     }
@@ -41,8 +46,8 @@ class BeltController : MonoBehaviour
         WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
         //WorkbenchControllers[Belt.WorkbenchCount].gameObject.Se
 
-        PlusButton[Belt.WorkbenchCount].SetActive(false);
-        if (Belt.WorkbenchCount < 2) PlusButton[Belt.WorkbenchCount + 1].SetActive(true);
+        WorkbenchButtons.Buttons[Belt.WorkbenchCount].SetActive(false);
+        if (Belt.WorkbenchCount < 2) WorkbenchButtons.Buttons[Belt.WorkbenchCount + 1].SetActive(true);
 
         Belt.WorkbenchCount++;
 
