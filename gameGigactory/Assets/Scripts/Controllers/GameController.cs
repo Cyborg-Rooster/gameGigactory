@@ -37,22 +37,12 @@ class GameController : MonoBehaviour
 
             ButtonsController beltButtonsController = Instantiate(BeltCanvas, shedUITransform).GetComponent<ButtonsController>();
             beltButtonsController.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
-            beltButtonsController.SetVoid(this, controller);
+            beltButtonsController.SetVoid(controller);
 
             controller.InstantiateObjects(s.ID, beltButtonsController, shedUITransform);
             YPosToSpawn += 9.92f;
             yield return new WaitUntil(() => controller.Loaded);
         }
-    }
-
-    public void BuyBelt(ShedController shedController)
-    {
-        shedController.Addbelt();
-    }
-
-    public void BuyWorkbench(BeltController beltController)
-    {
-        beltController.AddWorkbench();
     }
 
     private void OnApplicationQuit()

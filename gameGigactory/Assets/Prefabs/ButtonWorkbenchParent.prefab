@@ -53,7 +53,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Buttons:
-  - {fileID: 0}
   - {fileID: 5503649897614740051}
   - {fileID: 5721040229350419967}
   - {fileID: 5020880156697594823}

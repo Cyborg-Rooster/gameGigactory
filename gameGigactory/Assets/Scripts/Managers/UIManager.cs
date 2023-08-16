@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 class UIManager
 {
-    public static void SetBeltButtonAction(GameObject button, GameController instance, ShedController controller)
+    public static void SetBeltButtonAction(GameObject button, ShedController controller)
     {
-        button.GetComponent<Button>().onClick.AddListener(delegate { instance.BuyBelt(controller); });
+        button.GetComponent<Button>().onClick.AddListener(delegate { controller.Addbelt(); });
     }
 
-    public static void SetWorkbenchButtonAction(GameObject button, GameController instance, BeltController controller)
+    public static void SetWorkbenchButtonAction(GameObject button, BeltController controller)
     {
-        button.GetComponent<Button>().onClick.AddListener(delegate { instance.BuyWorkbench(controller); });
+        button.GetComponent<Button>().onClick.AddListener(delegate { controller.AddWorkbench(); });
     }
 }

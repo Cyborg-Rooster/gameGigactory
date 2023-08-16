@@ -10,19 +10,19 @@ class ButtonsController : MonoBehaviour
 {
     public List<GameObject> Buttons;
 
-    public void SetVoid(GameController controller, ShedController shedController)
+    public void SetVoid(ShedController shedController)
     {
         foreach (var button in Buttons) 
         {
-            UIManager.SetBeltButtonAction(button, controller, shedController);
+            UIManager.SetBeltButtonAction(button, shedController);
         }
     }
 
-    public void SetVoid(GameController controller, BeltController beltController)
+    public void SetVoid(BeltController beltController)
     {
         foreach (var button in Buttons)
         {
-            UIManager.SetWorkbenchButtonAction(button, controller, beltController);
+            UIManager.SetWorkbenchButtonAction(button, beltController);
         }
     }
 

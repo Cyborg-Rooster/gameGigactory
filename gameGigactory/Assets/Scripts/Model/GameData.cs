@@ -157,8 +157,8 @@ class GameData
             CommonQuery.Update
             (
                 "BELTS",
-                $"WORKBENCH_COUNT = {Belts.Count()}",
-                $"SHED_ID = {belt.ID}"
+                $"WORKBENCH_COUNT = {belt.WorkbenchCount}",
+                $"BELT_ID = {belt.ID}"
             )
         );
     }
