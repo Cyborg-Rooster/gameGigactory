@@ -6,16 +6,14 @@ public class ProductResourceController : MonoBehaviour
 {
     [SerializeField] Sprite ProductSprite;
     [SerializeField] float BeltYPosition;
+    [SerializeField] int HP;
 
     SpriteRenderer SpriteRenderer;
     MovementController MovementController;
 
-    // Start is called before the first frame update
-
-    // Update is called once per frame
-    void Update()
+    public void DecreaseHP()
     {
-        
+        HP--;
     }
 
     public void PrepareProduct()
@@ -64,5 +62,10 @@ public class ProductResourceController : MonoBehaviour
 
         MovementController.CanMove = false;
         Destroy(gameObject);
+    }
+
+    public IEnumerator WaitForHPEqualsZero()
+    {
+        yield return new WaitUntil(() => HP == 0);
     }
 }

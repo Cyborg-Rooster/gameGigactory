@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 1011284873815302934}
   - component: {fileID: 3886341578354728150}
   - component: {fileID: 3294702165822159316}
+  - component: {fileID: 476570579714100047}
   m_Layer: 0
   m_Name: Workbench-3
   m_TagString: Untagged
@@ -241,6 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 2311014456854829883}
+  ProductBox: {fileID: 8677358083133871434}
 --- !u!114 &3294702165822159316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +262,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &476570579714100047
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194260948882376119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &948479212436668724
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +300,7 @@ GameObject:
   - component: {fileID: 5612734953754055035}
   - component: {fileID: 2764386105311796580}
   - component: {fileID: 953573599373158252}
+  - component: {fileID: 7045210678721420840}
   m_Layer: 0
   m_Name: Workbench-1
   m_TagString: Untagged
@@ -356,6 +387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 2311014456854829883}
+  ProductBox: {fileID: 8677358083133871434}
 --- !u!114 &953573599373158252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +407,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &7045210678721420840
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948479212436668724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &2423329939801280706
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +445,7 @@ GameObject:
   - component: {fileID: 2861886592295856548}
   - component: {fileID: 7859144312086888301}
   - component: {fileID: 5062691293599188418}
+  - component: {fileID: 4881870885392324924}
   m_Layer: 0
   m_Name: Workbench-4
   m_TagString: Untagged
@@ -471,6 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 464998738495626081}
+  ProductBox: {fileID: 5150266756867199803}
 --- !u!114 &5062691293599188418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +552,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &4881870885392324924
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423329939801280706}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &2628913400751894030
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +590,7 @@ GameObject:
   - component: {fileID: 1043086611679544065}
   - component: {fileID: 5386217505353961139}
   - component: {fileID: 6629267968848368762}
+  - component: {fileID: 4387772402990053657}
   m_Layer: 0
   m_Name: Workbench-2
   m_TagString: Untagged
@@ -586,6 +677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 2311014456854829883}
+  ProductBox: {fileID: 8677358083133871434}
 --- !u!114 &6629267968848368762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +697,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &4387772402990053657
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628913400751894030}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &2797410449667363613
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +735,7 @@ GameObject:
   - component: {fileID: 5213481247000492382}
   - component: {fileID: 700158892614060515}
   - component: {fileID: 1287279660832488782}
+  - component: {fileID: 1126949962002172971}
   m_Layer: 0
   m_Name: Workbench-2
   m_TagString: Untagged
@@ -701,6 +822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 464998738495626081}
+  ProductBox: {fileID: 5150266756867199803}
 --- !u!114 &1287279660832488782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +842,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &1126949962002172971
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2797410449667363613}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &4403915893371869123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1150,7 @@ GameObject:
   - component: {fileID: 4403915894386027150}
   - component: {fileID: 3874671825573118627}
   - component: {fileID: 1416907096524507060}
+  - component: {fileID: 4341456606419173763}
   m_Layer: 0
   m_Name: Workbench-4
   m_TagString: Untagged
@@ -1086,6 +1237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 4403915894391347173}
+  ProductBox: {fileID: 4403915893862356411}
 --- !u!114 &1416907096524507060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,6 +1257,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &4341456606419173763
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403915894386027148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &4403915894391347170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1567,7 @@ GameObject:
   - component: {fileID: 4403915894973014498}
   - component: {fileID: 7385302577176762395}
   - component: {fileID: 706801073868130276}
+  - component: {fileID: 8674220500732974452}
   m_Layer: 0
   m_Name: Workbench-3
   m_TagString: Untagged
@@ -1473,6 +1654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 4403915894391347173}
+  ProductBox: {fileID: 4403915893862356411}
 --- !u!114 &706801073868130276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +1674,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &8674220500732974452
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403915894973014496}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &4403915895041548614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1712,7 @@ GameObject:
   - component: {fileID: 4403915895041548616}
   - component: {fileID: 4382533561624200544}
   - component: {fileID: 3742936168006488810}
+  - component: {fileID: 949868611002035712}
   m_Layer: 0
   m_Name: Workbench-1
   m_TagString: Untagged
@@ -1588,6 +1799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 4403915894391347173}
+  ProductBox: {fileID: 4403915893862356411}
 --- !u!114 &3742936168006488810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,6 +1819,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &949868611002035712
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403915895041548614}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &4403915895100773717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1857,7 @@ GameObject:
   - component: {fileID: 4403915895100773719}
   - component: {fileID: 1291470091064598733}
   - component: {fileID: 6853360607451727242}
+  - component: {fileID: 7095387806688973976}
   m_Layer: 0
   m_Name: Workbench-2
   m_TagString: Untagged
@@ -1703,6 +1944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 4403915894391347173}
+  ProductBox: {fileID: 4403915893862356411}
 --- !u!114 &6853360607451727242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,6 +1964,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &7095387806688973976
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403915895100773717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &4403915895214336595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2257,7 @@ GameObject:
   - component: {fileID: 5908696857778226619}
   - component: {fileID: 5854537077384264528}
   - component: {fileID: 9114760274243595072}
+  - component: {fileID: 1211844213853258008}
   m_Layer: 0
   m_Name: Workbench-3
   m_TagString: Untagged
@@ -2073,6 +2344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 464998738495626081}
+  ProductBox: {fileID: 5150266756867199803}
 --- !u!114 &9114760274243595072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,6 +2364,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &1211844213853258008
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906894835682660134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &5065791742728914926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,6 +2486,7 @@ GameObject:
   - component: {fileID: 4319002575275710927}
   - component: {fileID: 5398728928306527932}
   - component: {fileID: 7144748500381064622}
+  - component: {fileID: 7052280277757960438}
   m_Layer: 0
   m_Name: Workbench-1
   m_TagString: Untagged
@@ -2272,6 +2573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 464998738495626081}
+  ProductBox: {fileID: 5150266756867199803}
 --- !u!114 &7144748500381064622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,6 +2593,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &7052280277757960438
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390290904065358069}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &5672303725138360609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,6 +2802,7 @@ GameObject:
   - component: {fileID: 1918107719438437204}
   - component: {fileID: 5248166903697452384}
   - component: {fileID: 1442332327447572483}
+  - component: {fileID: 5604646965152333608}
   m_Layer: 0
   m_Name: Workbench-4
   m_TagString: Untagged
@@ -2558,6 +2889,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28b84748fe0204d86af6e6190a1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
+  ResourcesBox: {fileID: 2311014456854829883}
+  ProductBox: {fileID: 8677358083133871434}
 --- !u!114 &1442332327447572483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,6 +2909,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba43731660d1e7a4982212e7c788635a, type: 3}
   - {fileID: 21300000, guid: e2bb1d75b351ce0428425b4e8d941566, type: 3}
   LevelsAnimatorControllers: []
+--- !u!61 &5604646965152333608
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131862745732485023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.22}
+    newSize: {x: 0.4, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &8183782378775021597
 GameObject:
   m_ObjectHideFlags: 0

@@ -140,3 +140,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProductSprite: {fileID: 1902103753, guid: 411df84f75156554ba723e1bc9501fe0, type: 3}
   BeltYPosition: 0.045
+  HP: 3

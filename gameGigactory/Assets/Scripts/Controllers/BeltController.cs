@@ -1,15 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 class BeltController : MonoBehaviour
 {
+    [Header("Controllers")]
     [SerializeField] List<WorkbenchController> WorkbenchControllers;
+
+    [Header("Prefabs")]
     [SerializeField] GameObject WorkbenchButtonsController;
 
     Belt Belt;
     ButtonsController WorkbenchButtons;
+
 
     public void InstantiateObjects(Belt belt, Transform ShedUI)
     {
@@ -60,4 +65,5 @@ class BeltController : MonoBehaviour
         GameData.SaveWorkbench(workbench);
         GameData.UpdateBelt(Belt);
     }
+
 }
