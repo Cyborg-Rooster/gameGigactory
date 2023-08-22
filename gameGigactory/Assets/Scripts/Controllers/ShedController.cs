@@ -23,9 +23,12 @@ class ShedController : MonoBehaviour
 
     Shed Shed;
     Transform ShedUI;
+    GameController GameController;
 
-    public void InstantiateObjects(int index, ButtonsController beltButtonsUIController, Transform shedUI)
+    public void InstantiateObjects(int index, ButtonsController beltButtonsUIController, Transform shedUI, GameController gameController)
     {
+        GameController = gameController;
+
         Shed = GameData.Sheds.Where(x => x.ID == index).First();
         ShedUI = shedUI;
         var tmp = GameData.Belts.Where(x => x.ShedID == Shed.ID).ToArray();
@@ -40,9 +43,8 @@ class ShedController : MonoBehaviour
         {
             if (max > i)
             {
-                //WorkbenchButtons = Instantiate(workbenchButtonController, shedUI).GetComponent<ButtonsController>();
                 BeltControllers[i].gameObject.SetActive(true);
-                BeltControllers[i].InstantiateObjects(tmp[i], ShedUI);
+                BeltControllers[i].InstantiateObjects(tmp[i], ShedUI, GameController);
             }
             else if (max == i) PlusButton[i].SetActive(true);
         }
@@ -51,28 +53,32 @@ class ShedController : MonoBehaviour
 
     public void Addbelt()
     {
-        Belt belt = new Belt()
+        if (GameData.Complexes[0].Money >= 10000)
         {
-            ID = GameData.Belts.Count() + 1,
-            ShedID = Shed.ID,
-            Quality = 0,
-            WorkbenchCount = 1,
-            ProductBoxQuality = 0,
-            ResourcesBoxQuality = 0
-        };
+            Belt belt = new Belt()
+            {
+                ID = GameData.Belts.Count() + 1,
+                ShedID = Shed.ID,
+                Quality = 0,
+                WorkbenchCount = 1,
+                ProductBoxQuality = 0,
+                ResourcesBoxQuality = 0
+            };
 
-        BeltControllers[Shed.BeltsCount].gameObject.SetActive(true);
-        BeltControllers[Shed.BeltsCount].InstantiateObjects(belt, ShedUI);
+            BeltControllers[Shed.BeltsCount].gameObject.SetActive(true);
+            BeltControllers[Shed.BeltsCount].InstantiateObjects(belt, ShedUI, GameController);
 
-        PlusButton[Shed.BeltsCount].SetActive(false);
-        if (Shed.BeltsCount < 2) PlusButton[Shed.BeltsCount + 1].SetActive(true);
+            PlusButton[Shed.BeltsCount].SetActive(false);
+            if (Shed.BeltsCount < 2) PlusButton[Shed.BeltsCount + 1].SetActive(true);
 
-        Shed.BeltsCount++;
+            Shed.BeltsCount++;
 
-        GameData.SaveBelt(belt);
-        GameData.UpdateShed(Shed);
+            GameController.DecreaseMoney(10000);
 
-        Shed = GameData.Sheds.Where(x => x.ID == Shed.ID).First();
+            GameData.SaveBelt(belt);
+            GameData.UpdateShed(Shed);
 
+            Shed = GameData.Sheds.Where(x => x.ID == Shed.ID).First();
+        }
     }
 }

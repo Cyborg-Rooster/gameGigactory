@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
@@ -17,15 +18,19 @@ class GameController : MonoBehaviour
     [SerializeField] GameObject Shed;
     [SerializeField] GameObject BeltCanvas;
 
+    [Header("UI")]
+    [SerializeField] GameObject Money;
+
     private void Start()
     {
+        UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
         StartCoroutine("LoadSheds");
     }
 
     System.Collections.IEnumerator LoadSheds()
     {
         float YPosToSpawn = 0f;
-        foreach (var s in GameData.Sheds)
+        foreach (var s in GameData.Sheds.Where(x => x.ComplexID == 1))
         {
             ShedController controller = Instantiate(Shed, ShedParent).GetComponent<ShedController>();
             controller.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
@@ -39,14 +44,27 @@ class GameController : MonoBehaviour
             beltButtonsController.transform.position = new Vector3(controller.transform.position.x, YPosToSpawn, 0);
             beltButtonsController.SetVoid(controller);
 
-            controller.InstantiateObjects(s.ID, beltButtonsController, shedUITransform);
+            controller.InstantiateObjects(s.ID, beltButtonsController, shedUITransform, this);
             YPosToSpawn += 9.92f;
             yield return new WaitUntil(() => controller.Loaded);
         }
     }
 
+    public void IncreaseMoney(int money)
+    {
+        GameData.Complexes[0].Money += money;
+        UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
+    }
+
+    public void DecreaseMoney(int money)
+    {
+        GameData.Complexes[0].Money -= money;
+        UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
+    }
+
     private void OnApplicationQuit()
     {
+        GameData.UpdateComplex(GameData.Complexes[0]);
         DatabaseManager.SetDatabaseActive(false);
     }
 }

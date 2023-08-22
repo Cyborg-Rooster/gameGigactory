@@ -15,16 +15,18 @@ class WorkbenchController : MonoBehaviour
     [SerializeField] Transform ResourcesBox;
     [SerializeField] Transform ProductBox;
 
-    ProductResourceController productResourceController;
+    ProductResourceController ProductResourceController;
+    GameController GameController;
 
-    private void Start()
+    public void StartComponent(GameController gameController)
     {
+        GameController = gameController;
         StartCoroutine(SpawnProduct());
     }
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0) && productResourceController != null) productResourceController.DecreaseHP();
+        if(Input.GetMouseButtonDown(0) && ProductResourceController != null) ProductResourceController.DecreaseHP();
     }
 
     private IEnumerator SpawnProduct()
@@ -32,12 +34,13 @@ class WorkbenchController : MonoBehaviour
         var tmp = CreateProduct();
 
         yield return tmp.WaitForComeToWorkbench(transform.localPosition);
-        productResourceController = tmp;
+        ProductResourceController = tmp;
 
-        yield return productResourceController.WaitForHPEqualsZero();
+        yield return ProductResourceController.WaitForHPEqualsZero();
+        ProductResourceController = null;
 
-        yield return productResourceController.WaitForComeToProductBox(ProductBox.localPosition);
-        productResourceController = null;
+        yield return tmp.WaitForComeToProductBox(ProductBox.localPosition);
+        GameController.IncreaseMoney(50);
 
         StartCoroutine(SpawnProduct());
     }

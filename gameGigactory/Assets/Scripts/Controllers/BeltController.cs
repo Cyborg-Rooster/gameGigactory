@@ -14,10 +14,12 @@ class BeltController : MonoBehaviour
 
     Belt Belt;
     ButtonsController WorkbenchButtons;
+    GameController GameController;
 
-
-    public void InstantiateObjects(Belt belt, Transform ShedUI)
+    public void InstantiateObjects(Belt belt, Transform ShedUI, GameController gameController)
     {
+        GameController = gameController;
+
         var max = belt.WorkbenchCount;
         Belt = belt;
 
@@ -26,12 +28,17 @@ class BeltController : MonoBehaviour
         tmpPos.y = transform.position.y;
         WorkbenchButtons.transform.position = tmpPos;
         WorkbenchControllers[0].gameObject.SetActive(true);
+        WorkbenchControllers[0].StartComponent(GameController);
 
         for (int i = 1; i < 4; i++)
         {
-            if (max > i) WorkbenchControllers[i].gameObject.SetActive(true);
-            else if (max == i) 
+            if (max > i) 
             { 
+                WorkbenchControllers[i].gameObject.SetActive(true);
+                WorkbenchControllers[i].StartComponent(GameController);
+            }
+            else if (max == i)
+            {
                 WorkbenchButtons.Buttons[i - 1].SetActive(true);
                 WorkbenchButtons.SetVoid(this);
             }
@@ -46,24 +53,28 @@ class BeltController : MonoBehaviour
 
     public void AddWorkbench()
     {
-        Debug.Log("Teste");
-        Workbench workbench = new Workbench()
+        if (GameData.Complexes[0].Money >= 500)
         {
-            ID = GameData.Workbenches.Count() + 1,
-            BeltID = Belt.ID,
-            WorkerType = 0
-        };
+            Workbench workbench = new Workbench()
+            {
+                ID = GameData.Workbenches.Count() + 1,
+                BeltID = Belt.ID,
+                WorkerType = 0
+            };
 
-        WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
-        //WorkbenchControllers[Belt.WorkbenchCount].gameObject.Se
+            WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
+            WorkbenchControllers[Belt.WorkbenchCount].StartComponent(GameController);
 
-        WorkbenchButtons.Buttons[Belt.WorkbenchCount - 1].SetActive(false);
-        if (Belt.WorkbenchCount < 3) WorkbenchButtons.Buttons[Belt.WorkbenchCount].SetActive(true);
+            WorkbenchButtons.Buttons[Belt.WorkbenchCount - 1].SetActive(false);
+            if (Belt.WorkbenchCount < 3) WorkbenchButtons.Buttons[Belt.WorkbenchCount].SetActive(true);
 
-        Belt.WorkbenchCount++;
+            Belt.WorkbenchCount++;
 
-        GameData.SaveWorkbench(workbench);
-        GameData.UpdateBelt(Belt);
+            GameController.DecreaseMoney(500);
+
+            GameData.SaveWorkbench(workbench);
+            GameData.UpdateBelt(Belt);
+        }
     }
-
 }
+

@@ -17,4 +17,9 @@ class UIManager
     {
         button.GetComponent<Button>().onClick.AddListener(delegate { controller.AddWorkbench(); });
     }
+
+    public static void SetText(GameObject text, object value) 
+    {
+        text.GetComponent<Text>().text = value.ToString();
+    }
 }

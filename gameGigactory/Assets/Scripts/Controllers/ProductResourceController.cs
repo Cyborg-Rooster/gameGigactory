@@ -31,7 +31,6 @@ public class ProductResourceController : MonoBehaviour
         MovementController.ChangeFinalPositionAndMove(new Vector3(transform.localPosition.x, BeltYPosition, 0));
 
         yield return MovementController.WaitForObjectToStop();
-        Debug.Log("Teste");
 
         MovementController.ChangeFinalPositionAndMove(new Vector3(finalPosition.x, transform.localPosition.y, 0));
 

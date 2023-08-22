@@ -8,6 +8,7 @@ using UnityEngine;
 
 class GameData
 {
+    public static List<Complex> Complexes = new List<Complex>();
     public static List<Shed> Sheds = new List<Shed>();
     public static List<Room> Rooms = new List<Room>();
     public static List<Truck> Trucks = new List<Truck>();
@@ -18,7 +19,20 @@ class GameData
     {
         try
         {   
-            var brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "SHEDS"));
+            var brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "COMPLEXES"));
+            while(brute.Read())
+            {
+                Complexes.Add
+                (
+                    new Complex()
+                    {
+                        ID = brute.GetInt32(0),
+                        Money = brute.GetInt32(1)
+                    }
+                );
+            }
+
+            brute = DatabaseManager.ReturnAllValues(CommonQuery.Select("*", "SHEDS"));
             while(brute.Read())
             {
                 Sheds.Add
@@ -26,10 +40,11 @@ class GameData
                     new Shed()
                     {
                         ID = brute.GetInt32(0),
-                        BeltsCount = brute.GetInt32(1),
-                        RoomsCount = brute.GetInt32(2),
-                        FloorType = brute.GetInt32(3),
-                        TrucksCount = brute.GetInt32(4)
+                        ComplexID = brute.GetInt32(1),
+                        BeltsCount = brute.GetInt32(2),
+                        RoomsCount = brute.GetInt32(3),
+                        FloorType = brute.GetInt32(4),
+                        TrucksCount = brute.GetInt32(5)
                     }
                 );
             }
@@ -159,6 +174,20 @@ class GameData
                 "BELTS",
                 $"WORKBENCH_COUNT = {belt.WorkbenchCount}",
                 $"BELT_ID = {belt.ID}"
+            )
+        );
+    }
+
+    public static void UpdateComplex(Complex complex)
+    {
+        //Complexes[Complexes.FindIndex(x => x.ID == complex.ID)] = complex;
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Update
+            (
+                "COMPLEXES",
+                $"MONEY = {complex.Money}",
+                $"COMPLEX_ID = {complex.ID}"
             )
         );
     }

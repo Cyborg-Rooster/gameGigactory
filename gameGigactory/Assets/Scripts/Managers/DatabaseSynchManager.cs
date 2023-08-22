@@ -18,7 +18,7 @@ class DatabaseSynchManager
             CommonQuery.Create
             (
                 "SHEDS",
-                "SHED_ID INTEGER PRIMARY KEY AUTOINCREMENT, BELTS_COUNT INTEGER, " +
+                "SHED_ID INTEGER PRIMARY KEY AUTOINCREMENT, COMPLEX_ID INTEGER, BELTS_COUNT INTEGER, " +
                 "ROOMS_COUNT INTEGER, FLOOR_TYPE INTEGER, TRUCKS_COUNT INTEGER"
             )
         );
@@ -53,6 +53,13 @@ class DatabaseSynchManager
                 "WORKBENCHS", "WORKBENCH_ID INTEGER PRIMARY KEY AUTOINCREMENT, BELT_ID INTEGER, WORKER_TYPE INTEGER"
             )
         );
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Create
+            (
+                "COMPLEXES", "COMPLEX_ID INTEGER PRIMARY KEY AUTOINCREMENT, MONEY INTEGER"
+            )
+        );
         #endregion
 
         #region Add
@@ -60,9 +67,19 @@ class DatabaseSynchManager
         (
             CommonQuery.Add
             (
+                "COMPLEXES",
+                "MONEY",
+                "10000"
+            )
+        );
+
+        DatabaseManager.RunQuery
+        (
+            CommonQuery.Add
+            (
                 "SHEDS",
-                "BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
-                "0, 0, 0, 0"
+                "COMPLEX_ID, BELTS_COUNT, ROOMS_COUNT, FLOOR_TYPE, TRUCKS_COUNT",
+                "1, 0, 0, 0, 0"
             )
         );
         #endregion
