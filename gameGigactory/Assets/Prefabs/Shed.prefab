@@ -2001,7 +2001,6 @@ GameObject:
   - component: {fileID: 4403915895214336596}
   - component: {fileID: 4403915895214336597}
   - component: {fileID: 4403915895214336594}
-  - component: {fileID: 4403915895214336599}
   - component: {fileID: 310136586762718311}
   - component: {fileID: 1122991691911178937}
   m_Layer: 0
@@ -2105,26 +2104,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4403915895214336599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4403915895214336595}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5771eb49d6cd7d94b9e781b37f19cd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
-  ResourcesBox: {fileID: 4403915894391347173}
-  ProductBox: {fileID: 4403915893862356411}
-  WorkbenchPlaces:
-  - {fileID: 4403915895041548617}
-  - {fileID: 4403915895100773716}
-  - {fileID: 4403915894973014499}
-  - {fileID: 4403915894386027151}
 --- !u!114 &310136586762718311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,6 +2122,7 @@ MonoBehaviour:
   - {fileID: 7385302577176762395}
   - {fileID: 3874671825573118627}
   WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
+  WorkbenchSliderController: {fileID: 4900209795963026365, guid: 33227c7fe5674114f9e72ec4017c51be, type: 3}
 --- !u!114 &1122991691911178937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2610,6 @@ GameObject:
   - component: {fileID: 4841964126199717631}
   - component: {fileID: 6450054295675162548}
   - component: {fileID: 5387046789864495843}
-  - component: {fileID: 6948899333627789271}
   - component: {fileID: 8231562940405283439}
   - component: {fileID: 8716725526960990337}
   m_Layer: 0
@@ -2734,26 +2713,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6948899333627789271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5672303725138360609}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5771eb49d6cd7d94b9e781b37f19cd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
-  ResourcesBox: {fileID: 2311014456854829883}
-  ProductBox: {fileID: 8677358083133871434}
-  WorkbenchPlaces:
-  - {fileID: 5132197599035457424}
-  - {fileID: 139277140129206588}
-  - {fileID: 6439222121937170407}
-  - {fileID: 2547542720631583316}
 --- !u!114 &8231562940405283439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,6 +2731,7 @@ MonoBehaviour:
   - {fileID: 3886341578354728150}
   - {fileID: 5248166903697452384}
   WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
+  WorkbenchSliderController: {fileID: 4900209795963026365, guid: 33227c7fe5674114f9e72ec4017c51be, type: 3}
 --- !u!114 &8716725526960990337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,7 +2990,6 @@ GameObject:
   - component: {fileID: 2725288880786170981}
   - component: {fileID: 3077416647268777714}
   - component: {fileID: 2889357794327466129}
-  - component: {fileID: 2798735742916785011}
   - component: {fileID: 2117921719969416576}
   - component: {fileID: 1270059025852064674}
   m_Layer: 0
@@ -3134,26 +3093,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2798735742916785011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8784554306989450578}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5771eb49d6cd7d94b9e781b37f19cd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Resource: {fileID: 8254806541704953382, guid: 5b6d87a828c1db941933e0e645efbb3e, type: 3}
-  ResourcesBox: {fileID: 464998738495626081}
-  ProductBox: {fileID: 5150266756867199803}
-  WorkbenchPlaces:
-  - {fileID: 7544643891316148106}
-  - {fileID: 8012878611585940237}
-  - {fileID: 3290860165628576673}
-  - {fileID: 6848813941836256088}
 --- !u!114 &2117921719969416576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3172,6 +3111,7 @@ MonoBehaviour:
   - {fileID: 5854537077384264528}
   - {fileID: 7859144312086888301}
   WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
+  WorkbenchSliderController: {fileID: 4900209795963026365, guid: 33227c7fe5674114f9e72ec4017c51be, type: 3}
 --- !u!114 &1270059025852064674
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,16 +17,22 @@ class WorkbenchController : MonoBehaviour
 
     ProductResourceController ProductResourceController;
     GameController GameController;
+    GameObject Slider;
 
-    public void StartComponent(GameController gameController)
+    public void StartComponent(GameController gameController, GameObject slider)
     {
         GameController = gameController;
+        Slider = slider;
         StartCoroutine(SpawnProduct());
     }
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0) && ProductResourceController != null) ProductResourceController.DecreaseHP();
+        if (Input.GetMouseButtonDown(0) && ProductResourceController != null) 
+        { 
+            ProductResourceController.DecreaseHP();
+            UIManager.SetSliderValue(Slider, ProductResourceController.HP);
+        }
     }
 
     private IEnumerator SpawnProduct()
@@ -34,9 +40,13 @@ class WorkbenchController : MonoBehaviour
         var tmp = CreateProduct();
 
         yield return tmp.WaitForComeToWorkbench(transform.localPosition);
+        UIManager.SetSliderValue(Slider, tmp.HP);
+        Slider.SetActive(true);
+
         ProductResourceController = tmp;
 
         yield return ProductResourceController.WaitForHPEqualsZero();
+        Slider.SetActive(false);
         ProductResourceController = null;
 
         yield return tmp.WaitForComeToProductBox(ProductBox.localPosition);

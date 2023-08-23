@@ -22,4 +22,9 @@ class UIManager
     {
         text.GetComponent<Text>().text = value.ToString();
     }
+
+    public static void SetSliderValue(GameObject slider, float value)
+    {
+        slider.GetComponent<Slider>().value = value;
+    }
 }

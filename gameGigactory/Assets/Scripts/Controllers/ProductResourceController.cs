@@ -6,7 +6,8 @@ public class ProductResourceController : MonoBehaviour
 {
     [SerializeField] Sprite ProductSprite;
     [SerializeField] float BeltYPosition;
-    [SerializeField] int HP;
+
+    public int HP;
 
     SpriteRenderer SpriteRenderer;
     MovementController MovementController;
