@@ -62,9 +62,9 @@ class GameController : MonoBehaviour
         UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
     }
 
-    private void OnApplicationQuit()
+    private void OnApplicationFocus(bool onFocus)
     {
-        GameData.UpdateComplex(GameData.Complexes[0]);
-        DatabaseManager.SetDatabaseActive(false);
+        if (!onFocus) GameData.UpdateComplex(GameData.Complexes[0]);
+        DatabaseManager.SetDatabaseActive(onFocus);
     }
 }

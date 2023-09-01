@@ -18,12 +18,4 @@ class ButtonsController : MonoBehaviour
         }
     }
 
-    public void SetVoid(BeltController beltController)
-    {
-        foreach (var button in Buttons)
-        {
-            UIManager.SetWorkbenchButtonAction(button, beltController);
-        }
-    }
-
 }

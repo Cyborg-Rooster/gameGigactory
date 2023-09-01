@@ -10,11 +10,9 @@ class BeltController : MonoBehaviour
     [SerializeField] List<WorkbenchController> WorkbenchControllers;
 
     [Header("Prefabs")]
-    [SerializeField] GameObject WorkbenchButtonsController;
     [SerializeField] GameObject WorkbenchSliderController;
 
     Belt Belt;
-    ButtonsController WorkbenchButtons;
     ButtonsController WorkbenchSlider;
     GameController GameController;
 
@@ -25,13 +23,8 @@ class BeltController : MonoBehaviour
         var max = belt.WorkbenchCount;
         Belt = belt;
 
-        WorkbenchButtons = Instantiate(WorkbenchButtonsController, ShedUI).GetComponent<ButtonsController>();
-        var tmpPos = WorkbenchButtons.transform.position;
-        tmpPos.y = transform.position.y;
-        WorkbenchButtons.transform.position = tmpPos;
-
         WorkbenchSlider = Instantiate(WorkbenchSliderController, ShedUI).GetComponent<ButtonsController>();
-        tmpPos = WorkbenchSlider.transform.position;
+        var tmpPos = WorkbenchSlider.transform.position;
         tmpPos.y = transform.position.y;
         WorkbenchSlider.transform.position = tmpPos;
 
@@ -44,11 +37,6 @@ class BeltController : MonoBehaviour
             { 
                 WorkbenchControllers[i].gameObject.SetActive(true);
                 WorkbenchControllers[i].StartComponent(GameController, WorkbenchSlider.Buttons[i]);
-            }
-            else if (max == i)
-            {
-                WorkbenchButtons.Buttons[i - 1].SetActive(true);
-                WorkbenchButtons.SetVoid(this);
             }
         }
         ChangeSpriteLevel(belt.Quality);
@@ -72,9 +60,6 @@ class BeltController : MonoBehaviour
 
             WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
             WorkbenchControllers[Belt.WorkbenchCount].StartComponent(GameController, WorkbenchSlider.Buttons[Belt.WorkbenchCount]);
-
-            WorkbenchButtons.Buttons[Belt.WorkbenchCount - 1].SetActive(false);
-            if (Belt.WorkbenchCount < 3) WorkbenchButtons.Buttons[Belt.WorkbenchCount].SetActive(true);
 
             Belt.WorkbenchCount++;
 

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class InitializerController : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Awake()
     {
-        DatabaseInitializerManager.Init();
+        StartCoroutine(Init());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Init()
     {
-        
+        DatabaseInitializerManager.Init();
+        yield return null;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }
