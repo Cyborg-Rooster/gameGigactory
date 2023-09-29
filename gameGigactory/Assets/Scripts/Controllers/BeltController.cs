@@ -69,5 +69,10 @@ class BeltController : MonoBehaviour
             GameData.UpdateBelt(Belt);
         }
     }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0)) GameController.StartBeltDialogBoxAnimation(true).Start();
+    }
 }
 

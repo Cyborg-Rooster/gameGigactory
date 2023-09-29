@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Playables;
 
 class GameController : MonoBehaviour
 {
     [Header("Controllers")]
     [SerializeField] Transform ShedParent;
     [SerializeField] Transform UI;
+    [SerializeField] PlayableDirector PlayableDirector;
     [SerializeField] List<ShedController> Sheds = new List<ShedController>();
 
     [Header("Prefabs")]
@@ -20,6 +22,10 @@ class GameController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject Money;
+
+    [Header("UI Timelines")]
+    [SerializeField] PlayableAsset BeltUp;
+    [SerializeField] PlayableAsset BeltDown;
 
     private void Start()
     {
@@ -60,6 +66,18 @@ class GameController : MonoBehaviour
     {
         GameData.Complexes[0].Money -= money;
         UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
+    }
+
+    public async Task StartBeltDialogBoxAnimation(bool up)
+    {
+        var playable = up ? BeltUp : BeltDown;
+        PlayableDirector.playableAsset = playable;
+        PlayableDirector.Play();
+
+        await Task.Delay(3000);
+
+        PlayableDirector.playableAsset = BeltDown;
+        PlayableDirector.Play();
     }
 
     private void OnApplicationFocus(bool onFocus)

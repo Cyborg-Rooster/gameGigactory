@@ -2003,6 +2003,7 @@ GameObject:
   - component: {fileID: 4403915895214336594}
   - component: {fileID: 310136586762718311}
   - component: {fileID: 1122991691911178937}
+  - component: {fileID: 6396281344741459556}
   m_Layer: 0
   m_Name: BeltSlot1
   m_TagString: Untagged
@@ -2121,7 +2122,6 @@ MonoBehaviour:
   - {fileID: 1291470091064598733}
   - {fileID: 7385302577176762395}
   - {fileID: 3874671825573118627}
-  WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
   WorkbenchSliderController: {fileID: 4900209795963026365, guid: 33227c7fe5674114f9e72ec4017c51be, type: 3}
 --- !u!114 &1122991691911178937
 MonoBehaviour:
@@ -2141,6 +2141,32 @@ MonoBehaviour:
   - {fileID: 9100000, guid: d57c229ef60f33a47b6dd5faec7ce937, type: 2}
   - {fileID: 9100000, guid: dd24d1ac66bca7848963875afd0a9310, type: 2}
   - {fileID: 9100000, guid: 724e0c6d5c191514b8e0921feb2270e3, type: 2}
+--- !u!61 &6396281344741459556
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403915895214336595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 0.61}
+    newSize: {x: 2.56, y: 0.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 0.61}
+  m_EdgeRadius: 0
 --- !u!1 &4791329075796824244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,6 +2638,7 @@ GameObject:
   - component: {fileID: 5387046789864495843}
   - component: {fileID: 8231562940405283439}
   - component: {fileID: 8716725526960990337}
+  - component: {fileID: 8150618154716417702}
   m_Layer: 0
   m_Name: BeltSlot3
   m_TagString: Untagged
@@ -2730,7 +2757,6 @@ MonoBehaviour:
   - {fileID: 5386217505353961139}
   - {fileID: 3886341578354728150}
   - {fileID: 5248166903697452384}
-  WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
   WorkbenchSliderController: {fileID: 4900209795963026365, guid: 33227c7fe5674114f9e72ec4017c51be, type: 3}
 --- !u!114 &8716725526960990337
 MonoBehaviour:
@@ -2750,6 +2776,32 @@ MonoBehaviour:
   - {fileID: 9100000, guid: d57c229ef60f33a47b6dd5faec7ce937, type: 2}
   - {fileID: 9100000, guid: dd24d1ac66bca7848963875afd0a9310, type: 2}
   - {fileID: 9100000, guid: 724e0c6d5c191514b8e0921feb2270e3, type: 2}
+--- !u!61 &8150618154716417702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672303725138360609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 0.61}
+    newSize: {x: 2.56, y: 0.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 0.61}
+  m_EdgeRadius: 0
 --- !u!1 &8131862745732485023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3044,7 @@ GameObject:
   - component: {fileID: 2889357794327466129}
   - component: {fileID: 2117921719969416576}
   - component: {fileID: 1270059025852064674}
+  - component: {fileID: 7133051523925208365}
   m_Layer: 0
   m_Name: BeltSlot2
   m_TagString: Untagged
@@ -3110,7 +3163,6 @@ MonoBehaviour:
   - {fileID: 700158892614060515}
   - {fileID: 5854537077384264528}
   - {fileID: 7859144312086888301}
-  WorkbenchButtonsController: {fileID: 1482005616234471810, guid: 758715ffe32ee5a47b447e6fbe1eac43, type: 3}
   WorkbenchSliderController: {fileID: 4900209795963026365, guid: 33227c7fe5674114f9e72ec4017c51be, type: 3}
 --- !u!114 &1270059025852064674
 MonoBehaviour:
@@ -3130,3 +3182,29 @@ MonoBehaviour:
   - {fileID: 9100000, guid: d57c229ef60f33a47b6dd5faec7ce937, type: 2}
   - {fileID: 9100000, guid: dd24d1ac66bca7848963875afd0a9310, type: 2}
   - {fileID: 9100000, guid: 724e0c6d5c191514b8e0921feb2270e3, type: 2}
+--- !u!61 &7133051523925208365
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784554306989450578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 0.61}
+    newSize: {x: 2.56, y: 0.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 0.61}
+  m_EdgeRadius: 0
