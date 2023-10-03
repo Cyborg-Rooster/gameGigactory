@@ -16,6 +16,8 @@ class BeltController : MonoBehaviour
     ButtonsController WorkbenchSlider;
     GameController GameController;
 
+    public static bool BeltIsInteractable = true;
+
     public void InstantiateObjects(Belt belt, Transform ShedUI, GameController gameController)
     {
         GameController = gameController;
@@ -72,7 +74,11 @@ class BeltController : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)) GameController.StartBeltDialogBoxAnimation(true).Start();
+        if (Input.GetMouseButtonDown(0) && BeltIsInteractable)
+        {
+            GameController.StartBeltDialogBoxAnimation(true);
+            BeltIsInteractable = false;
+        }
     }
 }
 

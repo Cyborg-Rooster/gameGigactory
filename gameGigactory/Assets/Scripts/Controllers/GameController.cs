@@ -68,16 +68,12 @@ class GameController : MonoBehaviour
         UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
     }
 
-    public async Task StartBeltDialogBoxAnimation(bool up)
+    public void StartBeltDialogBoxAnimation(bool up)
     {
         var playable = up ? BeltUp : BeltDown;
         PlayableDirector.playableAsset = playable;
         PlayableDirector.Play();
-
-        await Task.Delay(3000);
-
-        PlayableDirector.playableAsset = BeltDown;
-        PlayableDirector.Play();
+        BeltController.BeltIsInteractable = !up;
     }
 
     private void OnApplicationFocus(bool onFocus)
