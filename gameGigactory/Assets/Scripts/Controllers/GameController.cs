@@ -8,11 +8,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 
-class GameController : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     [Header("Controllers")]
     [SerializeField] Transform ShedParent;
     [SerializeField] Transform UI;
+    [SerializeField] BeltDialogBoxController BeltDialogBoxController;
     [SerializeField] PlayableDirector PlayableDirector;
     [SerializeField] List<ShedController> Sheds = new List<ShedController>();
 
@@ -68,10 +69,17 @@ class GameController : MonoBehaviour
         UIManager.SetText(Money, "$" + GameData.Complexes[0].Money);
     }
 
+    public void PrepareDialogBox(BeltController belt)
+    {
+        BeltDialogBoxController.Init(belt);
+        StartBeltDialogBoxAnimation(true);
+    }
+
     public void StartBeltDialogBoxAnimation(bool up)
     {
-        var playable = up ? BeltUp : BeltDown;
-        PlayableDirector.playableAsset = playable;
+        if(up) PlayableDirector.playableAsset = BeltUp;
+        else PlayableDirector.playableAsset = BeltDown;
+
         PlayableDirector.Play();
         BeltController.BeltIsInteractable = !up;
     }

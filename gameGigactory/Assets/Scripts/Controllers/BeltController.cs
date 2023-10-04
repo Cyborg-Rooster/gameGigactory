@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-class BeltController : MonoBehaviour
+public class BeltController : MonoBehaviour
 {
     [Header("Controllers")]
     [SerializeField] List<WorkbenchController> WorkbenchControllers;
@@ -12,7 +12,8 @@ class BeltController : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] GameObject WorkbenchSliderController;
 
-    Belt Belt;
+    public Belt Belt;
+
     ButtonsController WorkbenchSlider;
     GameController GameController;
 
@@ -51,32 +52,29 @@ class BeltController : MonoBehaviour
 
     public void AddWorkbench()
     {
-        if (GameData.Complexes[0].Money >= 500)
+        Workbench workbench = new Workbench()
         {
-            Workbench workbench = new Workbench()
-            {
-                ID = GameData.Workbenches.Count() + 1,
-                BeltID = Belt.ID,
-                WorkerType = 0
-            };
+            ID = GameData.Workbenches.Count() + 1,
+            BeltID = Belt.ID,
+            WorkerType = 0
+        };
 
-            WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
-            WorkbenchControllers[Belt.WorkbenchCount].StartComponent(GameController, WorkbenchSlider.Buttons[Belt.WorkbenchCount]);
+        WorkbenchControllers[Belt.WorkbenchCount].gameObject.SetActive(true);
+        WorkbenchControllers[Belt.WorkbenchCount].StartComponent(GameController, WorkbenchSlider.Buttons[Belt.WorkbenchCount]);
 
-            Belt.WorkbenchCount++;
+        Belt.WorkbenchCount++;
 
-            GameController.DecreaseMoney(500);
+        GameController.DecreaseMoney(500);
 
-            GameData.SaveWorkbench(workbench);
-            GameData.UpdateBelt(Belt);
-        }
+        GameData.SaveWorkbench(workbench);
+        GameData.UpdateBelt(Belt);
     }
 
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0) && BeltIsInteractable)
         {
-            GameController.StartBeltDialogBoxAnimation(true);
+            GameController.PrepareDialogBox(this);
             BeltIsInteractable = false;
         }
     }

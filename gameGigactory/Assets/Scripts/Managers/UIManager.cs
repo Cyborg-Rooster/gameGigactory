@@ -22,4 +22,12 @@ class UIManager
     {
         slider.GetComponent<Slider>().value = value;
     }
+
+    public static void SetImage(GameObject container, Sprite sprite)
+    {
+        var image = container.GetComponent<Image>();
+
+        image.sprite = sprite;
+        image.SetNativeSize();
+    }
 }

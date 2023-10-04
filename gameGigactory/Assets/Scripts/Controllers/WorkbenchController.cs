@@ -49,7 +49,7 @@ class WorkbenchController : MonoBehaviour
         Slider.SetActive(false);
         ProductResourceController = null;
 
-        yield return tmp.WaitForComeToProductBox(ProductBox.localPosition);
+        StartCoroutine(tmp.WaitForComeToProductBox(ProductBox.localPosition));
         GameController.IncreaseMoney(50);
 
         StartCoroutine(SpawnProduct());

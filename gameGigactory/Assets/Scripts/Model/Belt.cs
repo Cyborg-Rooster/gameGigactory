@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Belt
+public class Belt
 {
     public int ID { get; set; }
     public int ShedID { get; set; }

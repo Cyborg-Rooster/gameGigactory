@@ -13,17 +13,18 @@ public class SpriteLevelController : MonoBehaviour
 
     private void Awake()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        Animator = GetComponent<Animator>();
+        if(TryGetComponent(out SpriteRenderer)) Animator = GetComponent<Animator>();
     }
     public void ChangeSpriteLevel(int level)
     {
-        if(LevelsAnimatorControllers.Any())
+        if (SpriteRenderer != null)
         {
-            Animator.runtimeAnimatorController = LevelsAnimatorControllers[level];
+            if (LevelsAnimatorControllers.Any()) Animator.runtimeAnimatorController = LevelsAnimatorControllers[level];
+            else SpriteRenderer.sprite = LevelsSprites[level];
+
             return;
         }
-        Debug.Log(name + " " + level);
-        SpriteRenderer.sprite = LevelsSprites[level];
+
+        UIManager.SetImage(gameObject, LevelsSprites[level]);
     }
 }
